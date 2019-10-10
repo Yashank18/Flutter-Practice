@@ -42,7 +42,7 @@ void initState(){
   );
   _iconAnimation = new CurvedAnimation(
     parent: _iconAnimationController,
-    curve: Curves.bounceOut,
+    curve: Curves.easeOut,
 
   ); 
   _iconAnimation.addListener(()=> this.setState((){}));
@@ -52,7 +52,7 @@ void initState(){
  Widget build(BuildContext context)
  {
    return new Scaffold(
-     backgroundColor: Colors.blue,
+     backgroundColor: Colors.black,
      body: new Stack(
        fit: StackFit.expand,
        children: <Widget>[
@@ -68,6 +68,43 @@ void initState(){
             new FlutterLogo(
               size: _iconAnimation.value * 100,
 
+            ),
+            new Form(child: new Theme(
+              data: new ThemeData(
+                brightness: Brightness.dark,
+                primarySwatch: Colors.teal,
+                inputDecorationTheme: new InputDecorationTheme(
+                  labelStyle: new TextStyle(
+                    color: Colors.teal,
+                    fontSize: 20.0,
+                  )
+                )
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(40.0),
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                     new TextFormField(
+                    decoration: new InputDecoration(
+                      labelText: "Enter E-mail",
+
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                   new TextFormField(
+                    decoration: new InputDecoration(
+                      labelText: "Enter Password",
+
+                    ),
+                    keyboardType: TextInputType.text,
+                    obscureText: true,
+                  ),
+                  ],
+                ),
+              ),
+            ),
+              
             )
           ],
          )
