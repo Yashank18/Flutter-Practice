@@ -80,8 +80,8 @@ void initState(){
                   )
                 )
               ),
-              child: Container(
-                padding: const EdgeInsets.all(40.0),
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.only(left:40.0,right: 40.0),
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
@@ -100,6 +100,15 @@ void initState(){
                     keyboardType: TextInputType.text,
                     obscureText: true,
                   ),
+                  new Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                  ),
+                  new MaterialButton(
+                    color: Colors.teal,
+                    textColor: Colors.white,
+                    child: new Text ("Login"),
+                    onPressed: ()=>{},
+                  )
                   ],
                 ),
               ),
