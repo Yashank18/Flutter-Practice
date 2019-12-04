@@ -22,85 +22,103 @@ State<StatefulWidget> createState() =>_Bottomtable();
 class _Bottomtable extends State<Bottomtable> with SingleTickerProviderStateMixin{
   TabController _tabController;
   static var _tabPages =<Widget>[
-
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
+    ListView(
+      children: <Widget>[
         Container(
-          width: 220.0,
-          height: 220.0,
+          height: 250.0,
+          margin: new EdgeInsets.symmetric(horizontal: 20.0,vertical: 20.0),
+          decoration: BoxDecoration(
+            
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+             color: Colors.white,
+          ),
           
-          child: Card(
-            child: Image.asset('assets/images/profile.png'),
-          )
-          
-        ),
-       Container(
-          padding: EdgeInsets.all(8.0),
-          
-          child: Card(
-            child: Text('Yashank',style: TextStyle(color: Colors.white,fontSize: 30.0),)
-      )
-      
-    ),
-    Container(padding: EdgeInsets.all(8.0),child: Text('Level-1',style: TextStyle(color: Colors.yellow),),),
-    ListTile(
-      
-      title: Text('Coins You have - 50'),
-      trailing: Icon(Icons.attach_money),
-    ),
-    
-    ]
-    ),
-// tab 2 starts
-    Center(child: Card(
-      color: Colors.black,
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 180.0,
-            child: Stack(children: <Widget>[
-              Positioned.fill(
-                child: Image.asset('assets/images/pubg.jpg',fit: BoxFit.cover,),
-                
-              ),
-              Positioned(
-                bottom: 16.0,
-                left: 16.0,
-                right: 16.0,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Solo',)
-                    
+          child: ListView(
+            children: <Widget>[
+              
+              Container(
+                child: Image.asset("assets/images/pubg.jpg"),
 
-                ),
-                )
-            ],),
-          )
-        ],
-      ),
+              ),
+             
+              Row(
+                children: <Widget>[
+                  
+                
+                    
+                     Text("Solo Match",style: TextStyle(color: Colors.grey,fontSize: 25.0,) ,),
+                  
+                ],
+              )
+              
+            ],
+          ),
+        ),
+      ],
     ),
-      
+
+    // 2nd page
+    ListView(
+      children: <Widget>[
+        Container(
+          height: 400.0,
+       
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+             color: Colors.white,
+          ),
+          child: ListView(
+            children: <Widget>[
+              Container(
+                child: Image.asset("assets/pubg.png"),
+              ),
+            ],
+          ),
+        ),
+      ],
     ),
     
-    Center(child: Container(
-      width: 200.0,
-      height: 200.0,
-      color: Colors.blue,
-      child: Text('Pubg'),
-      
+    //page 3
+    ListView(
+      children: <Widget>[
+        Container(
+          height: 400.0,
+         
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+             color: Colors.white,
+          ),
+          child: ListView(
+            children: <Widget>[
+              Container(
+                child: Image.asset("assets/pubg.png"),
+              ),
+            ],
+          ),
+        ),
+      ],
     ),
-    ),
-    Center(child: Container(
-      width: 200.0,
-      height: 200.0,
-      color: Colors.blue,
-      child: Text('Pubg'),
-      
-    ),
-    ),
+
+    //page 4
+    ListView(
+      children: <Widget>[
+        Container(
+          height: 400.0,
+         
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+             color: Colors.white,
+          ),
+          child: ListView(
+            children: <Widget>[
+              Container(
+                child: Image.asset("assets/pubg.png"),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),   
     
 
   ];
